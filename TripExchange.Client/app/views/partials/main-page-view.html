@@ -1,0 +1,47 @@
+<div  ng-controller="MainPageController">
+    <div class="jumbotron">
+        <h1>Welcome to Trip Exchange</h1>
+        <h2>Find your way home!</h2>
+    </div>
+
+    <div class="container" >
+        <p> <strong>Total trips : {{statData.trips}}</strong> </p>
+        <p> <strong>Finished trips :{{statData.finishedTrips}}</strong> </p>
+        <p> <strong>Total users :{{statData.users}}</strong> </p>
+        <p> <strong>Total drivers :{{statData.drivers}}</strong> </p>
+    </div>
+
+    <div id="main-page-content" class="container">
+        <div id="latest-trips">
+            <table class="table">
+                <tr>
+                    <th>Driver</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Depature Time</th>
+                </tr>
+                <tr ng-repeat="trip in publicTrips | orderBy : 'departureDate':true ">
+                    <td>{{trip.driverName}}</td>
+                    <td>{{trip.from}}</td>
+                    <td>{{trip.to}}</td>
+                    <td>{{trip.departureDate}}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="lastest-drivers" >
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Upcoming Trips</th>
+                    <th>Total Trips</th>
+                </tr>
+                <tr ng-repeat="driver in publicDrivers">
+                    <td>{{driver.name}}</td>
+                    <td>{{driver.numberOfUpcomingTrips}}</td>
+                    <td>{{driver.numberOfTotalTrips}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

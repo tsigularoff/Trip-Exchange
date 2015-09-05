@@ -1,0 +1,16 @@
+<div ng-controller="TripDetailsController" class="container">
+    <h1 class="h1 text-center" >{{driver.name}}</h1>
+
+    <div>Number of upcoming trips : {{driver.numberOfUpcomingTrips}}</div>
+    <div>Number of total trips: {{driver.numberOfTotalTrips}}</div>
+    <hr/>
+    <h3><strong>{{driver.name}}'s trips</strong></h3>
+    <ul>
+        <li ng-repeat="trip in driver.trips">
+            <p>{{trip.from}}</p>
+            <p>{{trip.to}}</p>
+            <p>{{trip.departureDate}}</p>
+            <p>{{trip.numberOfFreeSeats}}</p>
+        </li>
+    </ul>
+</div>

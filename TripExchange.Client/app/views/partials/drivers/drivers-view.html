@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="h1 text-center">Drivers</h1>
+    <div ng-show="isAuthenticated">
+
+        <input type="text"  ng-model="filter" class="input-sm"/>
+        <button ng-click="filterDrivers()" class="btn btn-sm">Filter</button>
+
+        <button ng-click="prevPage()" class="btn btn-sm">Prev</button>
+        <input type="text"  ng-model="driversPage" class="input-sm"/>
+        <button ng-click="nextPage()" class="btn btn-sm">Next</button>
+
+    </div>
+
+    <div >
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Upcoming Trips</th>
+                <th>Total Trips</th>
+            </tr>
+            <tr ng-repeat="driver in shownDrivers">
+                <td>{{driver.name}}</td>
+                <td>{{driver.numberOfUpcomingTrips}}</td>
+                <td>{{driver.numberOfTotalTrips}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>

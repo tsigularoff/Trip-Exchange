@@ -1,0 +1,47 @@
+<div ng-controller="TripsController">
+    <form name="signUpForm" class="form-horizontal">
+        <fieldset>
+            <legend>Create New Trip</legend>
+            <div class="form-group">
+                <label for="from" class="col-md-2 control-label">From</label>
+                <div class="col-md-10">
+                    <select ng-model="newTrip.from">
+                        <option  ng-repeat="city in cities">{{city}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="to" class="col-md-2 control-label">To</label>
+                <div class="col-md-10">
+                    <select ng-model="newTrip.to">
+                        <option  ng-repeat="city in cities">{{city}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="available-seats" class="col-md-2 control-label">Available seats</label>
+                <div class="col-md-10">
+                    <input id="available-seats" type="text" placeholder="seats" ng-model="newTrip.availableSeats" required="required" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="departure-time" class="col-md-2 control-label">Departure time</label>
+                <div class="col-md-10">
+                    <input id="departure-time" type="text" placeholder="departure time" ng-model="newTrip.departureTime" required="required" class="form-control"/>
+                </div>
+            </div>
+
+
+            <div class="pull-right">
+                <button ng-click="addTrip(newTrip)" ng-disabled="signUpForm.$invalid" class="btn btn-primary">
+                    Create
+                </button>
+                <a href="#/" class="btn btn-primary">Cancel</a>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
